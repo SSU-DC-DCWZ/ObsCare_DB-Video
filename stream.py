@@ -12,11 +12,11 @@ class Stream:
         self.height = int(self.capture.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
         now = datetime.datetime.now()
-        savename = "./" + str(camnum) + "/" + now.strftime('%Y%m%d_%H-%M-%S') + ".avi"
+        savename = "./recording/" + str(camnum) + "/" + now.strftime('%Y%m%d_%H-%M-%S') + ".avi"
         try:  # 파일 경로 생성, 경로가 존재 하지 않을 경우 파일 경로 생성
-            if not (os.path.isdir("./" + str(camnum))):
-                os.makedirs(os.path.join("./" + str(camnum)))
-        except OSError as e:
+            if not (os.path.isdir("./recording/" + str(camnum))):
+                os.makedirs(os.path.join("./recording/" + str(camnum)))
+        except OSError as e: #생성 실패 시 오류 코드 출력
             if e.errno != errno.EEXIST:
                 print("Dir error")
             raise
