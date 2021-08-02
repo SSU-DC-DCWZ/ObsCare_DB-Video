@@ -3,6 +3,7 @@ import datetime
 import os.path
 import errno
 
+#cctv 스트리밍을 위한 클래스 설계
 class Stream:
     def __init__(self, camnum):
         self.running = False
@@ -12,7 +13,7 @@ class Stream:
         self.height = int(self.capture.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
         now = datetime.datetime.now()
-        savename = "./recording/" + str(camnum) + "/" + now.strftime('%Y%m%d_%H-%M-%S') + ".avi"
+        savename = "./recording/" + str(camnum) + "/" + now.strftime('%Y%m%d_%H-%M-%S') + ".mp4"
         try:  # 파일 경로 생성, 경로가 존재 하지 않을 경우 파일 경로 생성
             if not (os.path.isdir("./recording/" + str(camnum))):
                 os.makedirs(os.path.join("./recording/" + str(camnum)))
@@ -21,7 +22,7 @@ class Stream:
                 print("Dir error")
             raise
 
-        codec = cv2.VideoWriter_fourcc('D', 'I', 'V', 'X')
+        codec = cv2.VideoWriter_fourcc(*'mp4v')
         self.out = cv2.VideoWriter(savename, codec, 20.0, ((int(self.width)), (int(self.height))))
 
     def run(self):
