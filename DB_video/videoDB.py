@@ -17,6 +17,8 @@ class DBvideo:
 
     def makedb(self):
         self.conn = sqlite3.connect(self.dbname)
+        if self.cur.rowcount == -1:
+            self.deldb()
         self.cur.execute('CREATE TABLE video_' + self.camnum + ' (id INTEGER, video_address TEXT)')
         self.conn.commit()
 
