@@ -15,9 +15,13 @@ class Stream:
             ret, frame = self.capture.read()
             cv2.imshow("VideoFrame1", frame)
             self.out.write(frame)
+            k = cv2.waitKey(1)
+            if k == 27:
+                self.stop()
+                break
 
-            # now = datetime.datetime.now()
-            # if now.strftime('%H%M') == 0000:
+            #now = datetime.datetime.now()
+            #if now.strftime('%H%M') == 0000:
             #     self.stop()
 
     def stop(self):
@@ -32,7 +36,7 @@ class Stream:
         self.width = int(self.capture.get(cv2.CAP_PROP_FRAME_WIDTH))
         self.height = int(self.capture.get(cv2.CAP_PROP_FRAME_HEIGHT))
         self.now = datetime.datetime.now()
-        self.savename = "./recording/" + str(self.camnum) + "/" + now.strftime('%Y%m') + ".mp4"
+        self.savename = "./recording/" + str(self.camnum) + "/" + self.now.strftime('%Y%m%d') + ".mp4"
         try:  # 파일 경로 생성, 경로가 존재 하지 않을 경우 파일 경로 생성
             if not (os.path.isdir("./recording/" + str(self.camnum))):
                 os.makedirs(os.path.join("./recording/" + str(self.camnum)))
