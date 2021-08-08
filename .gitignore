@@ -3,6 +3,6 @@ Situation
 data
 db
 venv
-test.py
 __pycache__
 .idea
+test.py
