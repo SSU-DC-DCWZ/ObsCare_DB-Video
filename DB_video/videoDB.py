@@ -9,7 +9,7 @@ class DBvideo:
         if self.path == None:
                 self.findtime = time
                 self.findnum = num
-        self.conn = sqlite3.connect('./DB_video/video.db')
+        self.conn = sqlite3.connect('./db/video.db')
         self.cur = self.conn.cursor()
         self.connectdb()
 
