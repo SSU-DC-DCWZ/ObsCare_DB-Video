@@ -1,5 +1,5 @@
+import datetime
 import sqlite3
-from dateutil.relativedelta import *
 
 class DBvideo:
     def __init__(self, num, time, path = None): #num=DB 작업할 카메라 번호, time=datetime.datetime.now(), path=동영상의 절대 경로
@@ -12,6 +12,7 @@ class DBvideo:
         self.conn = sqlite3.connect('./db/video.db')
         self.cur = self.conn.cursor()
         self.connectdb()
+        self.conn.commit()
 
     def __del__(self):
         pass
@@ -21,6 +22,7 @@ class DBvideo:
         self.conn.commit()
 
     def makerecord(self):
+        self.conn.commit()
         self.conn.execute("INSERT INTO video_" + str(self.camnum) + " VALUES(?,?)", (self.now.strftime('%Y%m%d'), self.path))
         self.conn.commit()
         self.delrecord()
@@ -36,7 +38,7 @@ class DBvideo:
         return path
 
     def delrecord(self):
-        lastday = self.now - relativedelta(months=3)
+        lastday = self.now - datetime.timedelta(weeks=10)
         self.conn.execute("DELETE FROM video_" + str(self.camnum) + " WHERE day=" + lastday.strftime('%Y%m%d'))
         self.conn.commit()
 
