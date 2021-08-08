@@ -51,7 +51,7 @@ class DBvideo:
         self.conn.execute("DELETE FROM video_" + str(self.camnum) + " WHERE day=" + lastday.strftime('%Y%m%d'))
         self.conn.commit()
 
-    def closedb(self): # DB 종료 함수
+    def closedb(self): #  DB 종료 함수
         self.conn.commit()
         self.conn.close()
 
