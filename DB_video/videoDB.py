@@ -39,6 +39,8 @@ class DBvideo:
         self.closedb()
         return path # 해당 동영상 파일의 경로 반환
 
+    # 해당 동영상 파일의 경로 반환
+
     def delrecord(self): # 저장기한 만료된 영상에 대한 DB 처리 및 삭제 함수
         lastday = self.now - datetime.timedelta(weeks=10) #저장기한 10주로 설정
         self.cur.execute("SELECT * FROM video_" + str(self.camnum) + " WHERE day=" + lastday.strftime('%Y%m%d'))
