@@ -7,22 +7,26 @@ from DB_video import videoDB
 #cctv 스트리밍을 위한 클래스 설계
 class Stream:
     def __init__(self, camnum):
-        self.running = False
+        self.running = True
         self.camnum = camnum
 
     def run(self):
+        print("start")
         while self.running:
-            ret, frame = self.capture.read()
-            cv2.imshow("VideoFrame1", frame)
-            self.out.write(frame)
-            k = cv2.waitKey(1)
-            if k == 27:
+            self.video()
+            now = datetime.datetime.now()
+            if now.strftime('%H%M%S') == '000000':
+                print("change")
                 self.stop()
-                break
+                self.start()
 
-            #now = datetime.datetime.now()
-            #if now.strftime('%H%M') == 0000:
-            #     self.stop()
+    def video(self):
+        ret, frame = self.capture.read()
+        cv2.imshow("VideoFrame1", frame)
+        self.out.write(frame)
+        k = cv2.waitKey(1)
+        if k == 27:
+            self.stop()
 
     def stop(self):
         self.running = False
