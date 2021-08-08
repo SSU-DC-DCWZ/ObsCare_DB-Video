@@ -13,13 +13,6 @@ class DBvideo:
         self.cur = self.conn.cursor()
         self.connectdb()
 
-    # def __init__(self, findnum, time):
-    #     self.findtime = time
-    #     self.findnum = findnum
-    #     self.conn = sqlite3.connect('./DB_video/video.db')
-    #     self.cur = self.conn.cursor()
-    #     self.connectdb()
-
     def __del__(self):
         pass
 
