@@ -2,7 +2,7 @@ import datetime
 import sqlite3
 
 class DBvideo:
-    def __init__(self, num, time, path = None): #num=DB 작업할 카메라 번호, time=datetime.datetime.now(), path=동영상의 절대 경로
+    def __init__(self, num, time, path=None): #num=DB 작업할 카메라 번호, time=datetime.datetime.now(), path=동영상의 절대 경로
         self.now = time
         self.camnum = num
         self.path = path
@@ -22,7 +22,6 @@ class DBvideo:
         self.conn.commit()
 
     def makerecord(self):
-        self.conn.commit()
         self.conn.execute("INSERT INTO video_" + str(self.camnum) + " VALUES(?,?)", (self.now.strftime('%Y%m%d'), self.path))
         self.conn.commit()
         self.delrecord()
@@ -34,7 +33,7 @@ class DBvideo:
             path = self.cur.fetchone()[1]
         except TypeError:
             path = ''
-        self.conn.close()
+        self.closedb()
         return path
 
     def delrecord(self):
