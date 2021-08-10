@@ -1,8 +1,11 @@
+import sqlite3
+
 import cv2
 import datetime
 import os.path
 import errno
 from DB_video import videoDB
+from DB_log import logDB
 
 class Stream: #cctv 스트리밍을 위한 클래스 설계
     def __init__(self, camnum):
@@ -33,6 +36,8 @@ class Stream: #cctv 스트리밍을 위한 클래스 설계
                     print("Dir error")
                 raise
             cv2.imwrite(name, frame)
+            im = logDB.DBlog(self.sign, now, name)
+            im.makerecord(self.camnum)
             self.sign = 0
         # 1ms 동안 키입력 대기 ESC키 눌리면 종료
         if cv2.waitKey(1) == 27:
