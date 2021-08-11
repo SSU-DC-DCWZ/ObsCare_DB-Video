@@ -27,7 +27,7 @@ class Stream: #cctv 스트리밍을 위한 클래스 설계
         showtime = datetime.datetime.now()
         cv2.putText(frame, showtime.strftime('%Y/%m/%d'), (10,470), cv2.FONT_HERSHEY_DUPLEX,0.5,(255,255,255))
         cv2.putText(frame, showtime.strftime('%H:%M:%S'), (555,470), cv2.FONT_HERSHEY_DUPLEX,0.5,(255,255,255))
-        cv2.putText(frame, showtime.strftime('CAM' + str(self.camnum+1)), (575,25), cv2.FONT_HERSHEY_DUPLEX,0.7,(255,255,255))
+        cv2.putText(frame, showtime.strftime('CAM' + str(self.camnum+1)), (575,25), cv2.FONT_HERSHEY_DUPLEX,0.7,(255,255,255)) #스트리밍 화면에 시간, 카메라번호 출력
         cv2.imshow(str(self.camnum), frame)
         self.out.write(frame)
         if self.sign >> 0: #상황 발생 시 스크린샷을 위한 처리
