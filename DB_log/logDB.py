@@ -29,9 +29,6 @@ class DBlog:
         self.conn.close()
 
     def makerecord(self, camnum): #레코드(TIME, PATH)생성 함수
-        # with open(self.path, "rb") as input_file:
-        #     ablob = input_file.read()
-           # self.conn.execute("INSERT INTO log_" + str(self.situation) + " VALUES(?,?,?,?)", (self.now.strftime('%Y%m%d%H%M%S'), camnum, self.path, [sqlite3.Binary(ablob)]))
         self.conn.execute("INSERT INTO log_" + str(self.situation) + " VALUES(?,?,?)",
                       (self.now.strftime('%Y%m%d%H%M%S'), camnum, self.path))
 
