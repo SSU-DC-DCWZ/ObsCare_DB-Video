@@ -32,7 +32,7 @@ class Stream: #cctv 스트리밍을 위한 클래스 설계
         self.out.write(frame)
         if self.sign >> 0: #상황 발생 시 스크린샷을 위한 처리
             now = datetime.datetime.now()
-            name = './data/Situation/' + str(self.sign) + '/' + now.strftime('%Y%m%d_%H_%M_%S') +'.jpg'
+            name = './data/Situation/' + str(self.sign) + '/' + now.strftime('%Y%m%d%H%M%S_'+str(self.sign)) +'.jpg'
             try:  # 파일 경로 생성, 경로가 존재 하지 않을 경우 파일 경로 생성
                 if not (os.path.isdir("./data/Situation/" + str(self.sign))):
                     os.makedirs(os.path.join("./data/Situation/" + str(self.sign)))
@@ -43,6 +43,7 @@ class Stream: #cctv 스트리밍을 위한 클래스 설계
             cv2.imwrite(name, frame)
             im = logDB.DBlog(self.sign, now, name)
             im.makerecord(self.camnum)
+            del im
             self.sign = 0
         # 1ms 동안 키입력 대기 ESC키 눌리면 종료
         if cv2.waitKey(1) == 27:
