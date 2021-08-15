@@ -40,6 +40,7 @@ class Stream: #cctv 스트리밍을 위한 클래스 설계
                 if e.errno != errno.EEXIST:
                     print("Dir error")
                 raise
+
             cv2.imwrite(name, frame)
             im = logDB.DBlog(self.sign, now, name)
             im.makerecord(self.camnum)
