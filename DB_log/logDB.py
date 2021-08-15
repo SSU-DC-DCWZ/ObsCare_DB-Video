@@ -1,6 +1,7 @@
 import datetime
 import sqlite3
 import os
+import errno
 
 
 #log 발생에 대한 DB 처리 클래스
@@ -15,6 +16,13 @@ class DBlog:
         self.closedb()  # 레코드 생성할 때는 일자가 바뀌었다는 뜻이므로 동시에 레코드 삭제 수행
 
     def connectdb(self): #DB파일 선언 및 테이블 없을 경우 테이블 생성하는 함수
+        try:  # 파일 경로 생성, 경로가 존재 하지 않을 경우 파일 경로 생성
+            if not (os.path.isdir("./db")):
+                os.makedirs(os.path.join("./db"))
+        except OSError as e:  # 생성 실패 시 오류 코드 출력
+            if e.errno != errno.EEXIST:
+                print("Dir error")
+            raise
         self.conn = sqlite3.connect('./db/log.db')
         self.cur = self.conn.cursor()
         self.cur.execute("CREATE TABLE IF NOT EXISTS log_" + str(self.situation) +
