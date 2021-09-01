@@ -10,16 +10,11 @@ class DBvideo:
     # camnum:발생한 카메라
     # time=발생 시간
     # path:스크린샷 저장 경로
-    def __init__(self, camnum, time, path=None):
+    def __init__(self, camnum=None, time=None, path=None):
         self.now = time
         self.camnum = camnum
         self.path = path
         self.connectdb()
-
-    # __del__ : 소멸자
-    def __del__(self):
-        # 소멸자에서  db를 종료하는 closedb() 호출
-        self.closedb()
 
     # connectdb(): DB파일 선언 및 테이블 없을 경우 테이블 생성 함수
     def connectdb(self):

@@ -19,11 +19,6 @@ class DBlog:
         self.path = path
         self.connectdb()
 
-    # __del__ : 소멸자
-    def __del__(self):
-        # 소멸자에서  db를 종료하는 closedb() 호출
-        self.closedb()
-
     # connectdb(): DB파일 선언 및 테이블 없을 경우 테이블 생성 함수
     def connectdb(self):
         # 파일 경로 생성, db 폴더가 존재 하지 않을 경우 예외처리 하여 파일 경로 생성
