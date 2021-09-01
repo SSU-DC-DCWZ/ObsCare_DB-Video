@@ -8,9 +8,9 @@
 ### 2. DBlog
 ### 3. DBvideo
 ## pip list
-> Python=3.8.10
-> opencv-python==4.2.0.34
-> sqlite3==3.31.1
+> Python=3.8.10  
+> opencv-python==4.2.0.34  
+> sqlite3==3.31.1  
 ## 개발 환경
 PyCharm 2021.1.13 (Professional Edition) @11.0.11
 ## 기여자
