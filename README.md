@@ -31,4 +31,4 @@ sqlite3==3.31.1
 ## 기여자
 #### **이찬서**(Lfollow-CS) : DB,Stream 관리 및 개별 프로젝트 통합
 ## 라이선스
-#### 이 프로젝트는 GNU General Public License v3.0을 사용합니다.
+#### 이 프로젝트는 [GNU General Public License v3.0](https://github.com/SSU-DC-DCWZ/ObsCure_DB-Video/blob/main/LICENSE)을 사용합니다.
