@@ -22,7 +22,7 @@
   현재는 [Main](https://github.com/SSU-DC-DCWZ/ObsCure_Main)에서 사용되지 않으나 추후에 출력한 알림에 해당하는 상황의 스크린샷을 보여주는 용도로 사용할 예정입니다.  
 ## Used Tools
 ```
-Python=3.8.10  
+Python==3.8.10  
 opencv-python==4.2.0.34  
 sqlite3==3.31.1  
 ```
