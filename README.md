@@ -27,8 +27,8 @@ opencv-python==4.2.0.34
 sqlite3==3.31.1  
 ```
 ## 개발 환경
-### PyCharm 2021.1.13 (Professional Edition) @11.0.11
+#### PyCharm 2021.1.13 (Professional Edition) @11.0.11
 ## 기여자
-### **이찬서**(Lfollow-CS) : DB,Stream 관리 및 개별 프로젝트 통합
+#### **이찬서**(Lfollow-CS) : DB,Stream 관리 및 개별 프로젝트 통합
 ## 라이선스
-### 이 프로젝트는 GNU General Public License v3.0을 사용합니다.
+#### 이 프로젝트는 GNU General Public License v3.0을 사용합니다.
