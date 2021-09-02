@@ -10,7 +10,7 @@ class DBlog:
     # 파라미터(camnum, time, path, situation)
     # camnum:발생한 카메라
     # situation:발생상황 종류
-    # time=발생 시간
+    # time:발생 시간
     # path:스크린샷 저장 경로
     def __init__(self, camnum=None, time=None, path=None,situation=None):
         self.now = time

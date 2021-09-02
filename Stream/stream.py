@@ -16,7 +16,7 @@ class Stream:
         # 스크린샷이 필요한 상황 발생 시 상황별 번호(0:상황 없음, 1:환자발생, 1~4:도움이 필요한사람)
         self.sign = 0
 
-    # stop(): 스트리밍 정지 및 저장, DB에 파일 저장
+    # stop(): 스트리밍 정지 및 저장
     def stop(self):
         self.running = False
         self.capture.release()
