@@ -28,6 +28,7 @@ sqlite3==3.31.1
 ```
 ## 개발 환경
 #### PyCharm 2021.1.13 (Professional Edition) @11.0.11
+#### Ubuntu 20.04.3 LTS (GNU/Linux 5.11.0-25-generic x86_64)
 ## 기여자
 #### **이찬서**(Lfollow-CS) : DB,Stream 관리 및 개별 프로젝트 통합
 ## 라이선스
