@@ -13,7 +13,7 @@
 > ##### 저장된 영상을 관리하는 클래스입니다.   
   영상 저장 시 카메라 번호, 일자, 경로를 입력으로 하여 레코드를 생성하고 저장기한을 관리하는 클래스 입니다.  
   또한, 카메라 번호, 일자를 입력으로 하여 입력받은 정보에 해당하는 영상의 경로를 찾아주는 역할도 합니다.  
-  [Stream](https://github.com/SSU-DC-DCWZ/ObsCure_DB-Video/tree/main/Stream) 클래스에서 영상 저장 시 바로 vide.db에 레코드가 생성되도록 합니다.  
+  [Stream](https://github.com/SSU-DC-DCWZ/ObsCure_DB-Video/tree/main/Stream) 클래스에서 영상 저장 시 바로 video.db에 레코드가 생성되도록 합니다.  
   [Main](https://github.com/SSU-DC-DCWZ/ObsCure_Main)에서는 [Model](https://github.com/SSU-DC-DCWZ/ObsCure_Main/tree/main/Detect/falldetect.py) 클래스에서 영상 저장 시 사용되고 [WindowClass](https://github.com/SSU-DC-DCWZ/ObsCure_Main/blob/main/ui/play_ui.py) 클래스에서 저장된 영상의 경로 출력 시 사용됩니다.  
 ### 3. DBlog 클래스
 > ##### 상황 발생 시 스크린샷의 관리를 위한 클래스입니다. 
