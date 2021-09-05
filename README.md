@@ -15,11 +15,25 @@
   - 카메라 번호, 일자를 입력으로 하여 입력받은 정보에 해당하는 영상의 경로를 찾아주는 역할도 합니다.  
   - [Stream](https://github.com/SSU-DC-DCWZ/ObsCare_DB-Video/tree/main/Stream) 클래스에서 영상 저장 시 바로 video.db에 레코드가 생성되도록 합니다.  
   - [Main](https://github.com/SSU-DC-DCWZ/ObsCare_Main)에서는 [Model](https://github.com/SSU-DC-DCWZ/ObsCare_Main/tree/main/Detect/falldetect.py) 클래스에서 영상 저장 시 사용되고 [WindowClass](https://github.com/SSU-DC-DCWZ/ObsCare_Main/blob/main/ui/play_ui.py) 클래스에서 저장된 영상의 경로 출력 시 사용됩니다.  
+  #### - 비디오 저장
+  ![videosave](https://user-images.githubusercontent.com/60226988/132118655-6d9be502-7098-429f-8c0a-ce6d6e59591e.png)
+  #### - DB 테이블
+  ![videodb](https://user-images.githubusercontent.com/60226988/132118441-735d87ea-c0ef-4eb7-9be8-45f120196880.png)
+  #### - DB 레코드
+  ![videodbrecord](https://user-images.githubusercontent.com/60226988/132118450-c26784d2-05dc-4c5b-803e-6585d68d6861.png)
+
 ### 3. DBlog 클래스
 > ##### 상황 발생 시 스크린샷의 관리를 위한 클래스입니다. 
   - 관측하려는 상황이 발생하였을 때 카메라번호, 일자, 경로, 상황을 입력으로 하여 레코드를 생성하고 저장기한을 관리하는 클래스 입니다.  
   - 카메라 번호, 상황번호, 일자를 입력으로 하여 입력받은 정보에 해당하는 스크린샷의 경로를 찾아주는 역할도 합니다.  
   - 현재는 [Main](https://github.com/SSU-DC-DCWZ/ObsCare_Main)에서 사용되지 않으나 추후에 출력한 알림에 해당하는 상황의 스크린샷을 보여주는 용도로 사용할 예정입니다.  
+  #### - 스크린샷 저장
+  ![스크린샷 이미지](https://user-images.githubusercontent.com/60226988/132118405-444e198c-4a16-4968-b491-8cb86ed4bbea.png)
+  #### - DB 레코드
+  ![logdb](https://user-images.githubusercontent.com/60226988/132118418-bce1205d-7db0-4154-8539-b39989ce457b.png)
+  #### - DB 레코드
+  ![logdbrecord](https://user-images.githubusercontent.com/60226988/132118422-dadc671c-92e4-4ed7-8c4f-c2bdbab67a11.png)
+
 ## Requirement
 ```
 Python==3.8.10  
