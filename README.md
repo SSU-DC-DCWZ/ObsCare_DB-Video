@@ -29,7 +29,7 @@
   - 현재는 [Main](https://github.com/SSU-DC-DCWZ/ObsCare_Main)에서 사용되지 않으나 추후에 출력한 알림에 해당하는 상황의 스크린샷을 보여주는 용도로 사용할 예정입니다.  
   #### - 스크린샷 저장
   ![스크린샷 이미지](https://user-images.githubusercontent.com/60226988/132118405-444e198c-4a16-4968-b491-8cb86ed4bbea.png)
-  #### - DB 레코드
+  #### - DB 테이블
   ![logdb](https://user-images.githubusercontent.com/60226988/132118418-bce1205d-7db0-4154-8539-b39989ce457b.png)
   #### - DB 레코드
   ![logdbrecord](https://user-images.githubusercontent.com/60226988/132118422-dadc671c-92e4-4ed7-8c4f-c2bdbab67a11.png)
