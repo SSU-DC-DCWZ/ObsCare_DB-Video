@@ -9,14 +9,16 @@
   - 객체 생성 시 카메라 번호를 입력으로 하여 해당 번호의 카메라 영상을 출력해줍니다.  
   - 00시 기준으로 촬영된 영상을 저장하고 상황 발생 시 스크린샷을 촬영할 수 있도록 구현하였습니다.  
   - [Main](https://github.com/SSU-DC-DCWZ/ObsCare_Main)에서는 실제로 사용되지는 않고 [Model](https://github.com/SSU-DC-DCWZ/ObsCare_Main/tree/main/Detect/falldetect.py) 클래스 구현 시 구조를 참고하였습니다.  
+  #### - 비디오 저장
+  ![동영상 저장](https://user-images.githubusercontent.com/60226988/132453429-3ed5a9da-86fe-4b26-a904-7076556f850c.png)
+  #### - 스크린샷 저장
+  ![스크린샷 이미지](https://user-images.githubusercontent.com/60226988/132118405-444e198c-4a16-4968-b491-8cb86ed4bbea.png)
 ### 2. DBvideo 클래스
 > ##### 저장된 영상을 관리하는 클래스입니다.   
   - 영상 저장 시 카메라 번호, 일자, 경로를 입력으로 하여 레코드를 생성하고 저장기한을 관리하는 클래스 입니다.  
   - 카메라 번호, 일자를 입력으로 하여 입력받은 정보에 해당하는 영상의 경로를 찾아주는 역할도 합니다.  
   - [Stream](https://github.com/SSU-DC-DCWZ/ObsCare_DB-Video/tree/main/Stream) 클래스에서 영상 저장 시 바로 video.db에 레코드가 생성되도록 합니다.  
   - [Main](https://github.com/SSU-DC-DCWZ/ObsCare_Main)에서는 [Model](https://github.com/SSU-DC-DCWZ/ObsCare_Main/tree/main/Detect/falldetect.py) 클래스에서 영상 저장 시 사용되고 [WindowClass](https://github.com/SSU-DC-DCWZ/ObsCare_Main/blob/main/ui/play_ui.py) 클래스에서 저장된 영상의 경로 출력 시 사용됩니다.  
-  #### - 비디오 저장
-  ![videosave](https://user-images.githubusercontent.com/60226988/132118655-6d9be502-7098-429f-8c0a-ce6d6e59591e.png)
   #### - DB 테이블
   ![videodb](https://user-images.githubusercontent.com/60226988/132118441-735d87ea-c0ef-4eb7-9be8-45f120196880.png)
   #### - DB 레코드
@@ -27,8 +29,6 @@
   - 관측하려는 상황이 발생하였을 때 카메라번호, 일자, 경로, 상황을 입력으로 하여 레코드를 생성하고 저장기한을 관리하는 클래스 입니다.  
   - 카메라 번호, 상황번호, 일자를 입력으로 하여 입력받은 정보에 해당하는 스크린샷의 경로를 찾아주는 역할도 합니다.  
   - 현재는 [Main](https://github.com/SSU-DC-DCWZ/ObsCare_Main)에서 사용되지 않으나 추후에 출력한 알림에 해당하는 상황의 스크린샷을 보여주는 용도로 사용할 예정입니다.  
-  #### - 스크린샷 저장
-  ![스크린샷 이미지](https://user-images.githubusercontent.com/60226988/132118405-444e198c-4a16-4968-b491-8cb86ed4bbea.png)
   #### - DB 테이블
   ![logdb](https://user-images.githubusercontent.com/60226988/132118418-bce1205d-7db0-4154-8539-b39989ce457b.png)
   #### - DB 레코드
